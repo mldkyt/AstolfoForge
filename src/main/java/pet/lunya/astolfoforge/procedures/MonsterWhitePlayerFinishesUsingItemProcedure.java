@@ -14,9 +14,9 @@ public class MonsterWhitePlayerFinishesUsingItemProcedure {
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal("You are now trans."), true);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 2));
+			_entity.addEffect(new MobEffectInstance(MobEffects.SPEED, 600, 2));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 600, 2));
+			_entity.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 600, 2));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 50, 3));
 	}

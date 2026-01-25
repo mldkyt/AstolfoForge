@@ -1,4 +1,3 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
@@ -17,11 +16,14 @@ import java.util.function.Function;
 
 public class AstolfoforgeModBlocks {
 	public static final DeferredRegister.Blocks REGISTRY = DeferredRegister.createBlocks(AstolfoforgeMod.MODID);
-	public static final DeferredBlock<Block> ASTOLFO_FLOWER = register("astolfo_flower", AstolfoFlowerBlock::new);
+	public static final DeferredBlock<Block> ASTOLFO_FLOWER;
+	static {
+		ASTOLFO_FLOWER = register("astolfo_flower", AstolfoFlowerBlock::new);
+	}
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 	private static <B extends Block> DeferredBlock<B> register(String name, Function<BlockBehaviour.Properties, ? extends B> supplier) {
-		return REGISTRY.registerBlock(name, supplier, BlockBehaviour.Properties.of());
+		return REGISTRY.registerBlock(name, supplier);
 	}
 }

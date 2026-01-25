@@ -1,4 +1,3 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
@@ -9,8 +8,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.dimension.DimensionType;
@@ -41,12 +40,11 @@ public class AstolfoforgeModBiomes {
 	@SubscribeEvent
 	public static void onServerAboutToStart(ServerAboutToStartEvent event) {
 		MinecraftServer server = event.getServer();
-		Registry<DimensionType> dimensionTypeRegistry = server.registryAccess().lookupOrThrow(Registries.DIMENSION_TYPE);
 		Registry<LevelStem> levelStemTypeRegistry = server.registryAccess().lookupOrThrow(Registries.LEVEL_STEM);
 		Registry<Biome> biomeRegistry = server.registryAccess().lookupOrThrow(Registries.BIOME);
 		for (LevelStem levelStem : levelStemTypeRegistry.stream().toList()) {
-			DimensionType dimensionType = levelStem.type().value();
-			if (dimensionType == dimensionTypeRegistry.getOrThrow(BuiltinDimensionTypes.OVERWORLD).getDelegate().value()) {
+			Holder<DimensionType> dimensionType = levelStem.type();
+			if (dimensionType.is(BuiltinDimensionTypes.OVERWORLD)) {
 				ChunkGenerator chunkGenerator = levelStem.generator();
 				// Inject biomes to biome source
 				if (chunkGenerator.getBiomeSource() instanceof MultiNoiseBiomeSource noiseSource) {
@@ -59,22 +57,11 @@ public class AstolfoforgeModBiomes {
 					chunkGenerator.featuresPerStep = Suppliers
 							.memoize(() -> FeatureSorter.buildFeaturesPerStep(List.copyOf(chunkGenerator.biomeSource.possibleBiomes()), biome -> chunkGenerator.generationSettingsGetter.apply(biome).features(), true));
 				}
-				// Inject surface rules
 				if (chunkGenerator instanceof NoiseBasedChunkGenerator noiseGenerator) {
-					NoiseGeneratorSettings noiseGeneratorSettings = noiseGenerator.settings.value();
-					SurfaceRules.RuleSource currentRuleSource = noiseGeneratorSettings.surfaceRule();
-					if (currentRuleSource instanceof SurfaceRules.SequenceRuleSource sequenceRuleSource) {
-						List<SurfaceRules.RuleSource> surfaceRules = new ArrayList<>(sequenceRuleSource.sequence());
-						addSurfaceRule(surfaceRules, 1, preliminarySurfaceRule(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(),
-								Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState()));
-						NoiseGeneratorSettings moddedNoiseGeneratorSettings = new NoiseGeneratorSettings(noiseGeneratorSettings.noiseSettings(), noiseGeneratorSettings.defaultBlock(), noiseGeneratorSettings.defaultFluid(),
-								noiseGeneratorSettings.noiseRouter(), SurfaceRules.sequence(surfaceRules.toArray(SurfaceRules.RuleSource[]::new)), noiseGeneratorSettings.spawnTarget(), noiseGeneratorSettings.seaLevel(),
-								noiseGeneratorSettings.disableMobGeneration(), noiseGeneratorSettings.aquifersEnabled(), noiseGeneratorSettings.oreVeinsEnabled(), noiseGeneratorSettings.useLegacyRandomSource());
-						noiseGenerator.settings = new Holder.Direct<>(moddedNoiseGeneratorSettings);
-					}
+					((AstolfoforgeModNoiseGeneratorSettings) (Object) noiseGenerator.settings.value()).setastolfoforgeDimensionTypeReference(dimensionType);
 				}
 			}
-			if (dimensionType == dimensionTypeRegistry.getOrThrow(BuiltinDimensionTypes.NETHER).getDelegate().value()) {
+			if (dimensionType.is(BuiltinDimensionTypes.NETHER)) {
 				ChunkGenerator chunkGenerator = levelStem.generator();
 				// Inject biomes to biome source
 				if (chunkGenerator.getBiomeSource() instanceof MultiNoiseBiomeSource noiseSource) {
@@ -87,21 +74,44 @@ public class AstolfoforgeModBiomes {
 					chunkGenerator.featuresPerStep = Suppliers
 							.memoize(() -> FeatureSorter.buildFeaturesPerStep(List.copyOf(chunkGenerator.biomeSource.possibleBiomes()), biome -> chunkGenerator.generationSettingsGetter.apply(biome).features(), true));
 				}
-				// Inject surface rules
 				if (chunkGenerator instanceof NoiseBasedChunkGenerator noiseGenerator) {
-					NoiseGeneratorSettings noiseGeneratorSettings = noiseGenerator.settings.value();
-					SurfaceRules.RuleSource currentRuleSource = noiseGeneratorSettings.surfaceRule();
-					if (currentRuleSource instanceof SurfaceRules.SequenceRuleSource sequenceRuleSource) {
-						List<SurfaceRules.RuleSource> surfaceRules = new ArrayList<>(sequenceRuleSource.sequence());
-						addSurfaceRule(surfaceRules, 2, anySurfaceRule(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(),
-								Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState()));
-						NoiseGeneratorSettings moddedNoiseGeneratorSettings = new NoiseGeneratorSettings(noiseGeneratorSettings.noiseSettings(), noiseGeneratorSettings.defaultBlock(), noiseGeneratorSettings.defaultFluid(),
-								noiseGeneratorSettings.noiseRouter(), SurfaceRules.sequence(surfaceRules.toArray(SurfaceRules.RuleSource[]::new)), noiseGeneratorSettings.spawnTarget(), noiseGeneratorSettings.seaLevel(),
-								noiseGeneratorSettings.disableMobGeneration(), noiseGeneratorSettings.aquifersEnabled(), noiseGeneratorSettings.oreVeinsEnabled(), noiseGeneratorSettings.useLegacyRandomSource());
-						noiseGenerator.settings = new Holder.Direct<>(moddedNoiseGeneratorSettings);
-					}
+					((AstolfoforgeModNoiseGeneratorSettings) (Object) noiseGenerator.settings.value()).setastolfoforgeDimensionTypeReference(dimensionType);
 				}
 			}
+		}
+	}
+
+	public static SurfaceRules.RuleSource adaptSurfaceRule(SurfaceRules.RuleSource currentRuleSource, Holder<DimensionType> dimensionType) {
+		if (dimensionType.is(BuiltinDimensionTypes.OVERWORLD))
+			return injectOverworldSurfaceRules(currentRuleSource);
+		if (dimensionType.is(BuiltinDimensionTypes.NETHER))
+			return injectNetherSurfaceRules(currentRuleSource);
+		return currentRuleSource;
+	}
+
+	private static SurfaceRules.RuleSource injectOverworldSurfaceRules(SurfaceRules.RuleSource currentRuleSource) {
+		List<SurfaceRules.RuleSource> customSurfaceRules = new ArrayList<>();
+		customSurfaceRules.add(preliminarySurfaceRule(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(),
+				Blocks.DIRT.defaultBlockState()));
+		if (currentRuleSource instanceof SurfaceRules.SequenceRuleSource sequenceRuleSource) {
+			customSurfaceRules.addAll(sequenceRuleSource.sequence());
+			return SurfaceRules.sequence(customSurfaceRules.toArray(SurfaceRules.RuleSource[]::new));
+		} else {
+			customSurfaceRules.add(currentRuleSource);
+			return SurfaceRules.sequence(customSurfaceRules.toArray(SurfaceRules.RuleSource[]::new));
+		}
+	}
+
+	private static SurfaceRules.RuleSource injectNetherSurfaceRules(SurfaceRules.RuleSource currentRuleSource) {
+		List<SurfaceRules.RuleSource> customSurfaceRules = new ArrayList<>();
+		customSurfaceRules.add(
+				anySurfaceRule(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState()));
+		if (currentRuleSource instanceof SurfaceRules.SequenceRuleSource sequenceRuleSource) {
+			customSurfaceRules.addAll(sequenceRuleSource.sequence());
+			return SurfaceRules.sequence(customSurfaceRules.toArray(SurfaceRules.RuleSource[]::new));
+		} else {
+			customSurfaceRules.add(currentRuleSource);
+			return SurfaceRules.sequence(customSurfaceRules.toArray(SurfaceRules.RuleSource[]::new));
 		}
 	}
 
@@ -116,10 +126,12 @@ public class AstolfoforgeModBiomes {
 
 	private static SurfaceRules.RuleSource anySurfaceRule(ResourceKey<Biome> biomeKey, BlockState groundBlock, BlockState undergroundBlock, BlockState underwaterBlock) {
 		return SurfaceRules.ifTrue(SurfaceRules.isBiome(biomeKey),
-				SurfaceRules.sequence(
-						SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),
-								SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0), SurfaceRules.state(groundBlock)), SurfaceRules.state(underwaterBlock))),
-						SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR), SurfaceRules.state(undergroundBlock))));
+				SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(5), 0),
+						SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0)),
+								SurfaceRules.sequence(
+										SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),
+												SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0), SurfaceRules.state(groundBlock)), SurfaceRules.state(underwaterBlock))),
+										SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR), SurfaceRules.state(undergroundBlock))))));
 	}
 
 	private static void addParameterPoint(List<Pair<Climate.ParameterPoint, Holder<Biome>>> parameters, Pair<Climate.ParameterPoint, Holder<Biome>> point) {
@@ -127,13 +139,7 @@ public class AstolfoforgeModBiomes {
 			parameters.add(point);
 	}
 
-	private static void addSurfaceRule(List<SurfaceRules.RuleSource> surfaceRules, int index, SurfaceRules.RuleSource rule) {
-		if (!surfaceRules.contains(rule)) {
-			if (index >= surfaceRules.size()) {
-				surfaceRules.add(rule);
-			} else {
-				surfaceRules.add(index, rule);
-			}
-		}
+	public interface AstolfoforgeModNoiseGeneratorSettings {
+		void setastolfoforgeDimensionTypeReference(Holder<DimensionType> dimensionType);
 	}
 }

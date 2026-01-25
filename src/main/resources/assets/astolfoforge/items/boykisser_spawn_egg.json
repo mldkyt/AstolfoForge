@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -1
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -3355444
-      }
-    ]
+    "model": "astolfoforge:item/boykisser_spawn_egg"
   }
 }

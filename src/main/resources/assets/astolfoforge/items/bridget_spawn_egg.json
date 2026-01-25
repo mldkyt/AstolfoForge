@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -10040065
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -1
-      }
-    ]
+    "model": "astolfoforge:item/bridget_spawn_egg"
   }
 }

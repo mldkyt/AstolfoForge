@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -6697729
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -13395457
-      }
-    ]
+    "model": "astolfoforge:item/felix_spawn_egg"
   }
 }

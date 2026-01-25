@@ -1,21 +1,9 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
 package pet.lunya.astolfoforge.init;
 
-import pet.lunya.astolfoforge.entity.VentiEntity;
-import pet.lunya.astolfoforge.entity.SiegEntity;
-import pet.lunya.astolfoforge.entity.RimuruEntity;
-import pet.lunya.astolfoforge.entity.NagisaShiotaEntity;
-import pet.lunya.astolfoforge.entity.HideriKanzakiEntity;
-import pet.lunya.astolfoforge.entity.FelixEntity;
-import pet.lunya.astolfoforge.entity.BridgetEntity;
-import pet.lunya.astolfoforge.entity.BoykisserEntity;
-import pet.lunya.astolfoforge.entity.AstolfoSchoolgirlEntity;
-import pet.lunya.astolfoforge.entity.AstolfoRepellentEntity;
-import pet.lunya.astolfoforge.entity.AstolfoCasualEntity;
-import pet.lunya.astolfoforge.entity.AstolfoArmorEntity;
+import pet.lunya.astolfoforge.entity.*;
 import pet.lunya.astolfoforge.AstolfoforgeMod;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -32,39 +20,39 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class AstolfoforgeModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, AstolfoforgeMod.MODID);
 	public static final DeferredHolder<EntityType<?>, EntityType<AstolfoCasualEntity>> ASTOLFO_CASUAL = register("astolfo_casual",
-			EntityType.Builder.<AstolfoCasualEntity>of(AstolfoCasualEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<AstolfoCasualEntity>of(AstolfoCasualEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<AstolfoSchoolgirlEntity>> ASTOLFO_SCHOOLGIRL = register("astolfo_schoolgirl",
-			EntityType.Builder.<AstolfoSchoolgirlEntity>of(AstolfoSchoolgirlEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<AstolfoSchoolgirlEntity>of(AstolfoSchoolgirlEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<AstolfoArmorEntity>> ASTOLFO_ARMOR = register("astolfo_armor",
-			EntityType.Builder.<AstolfoArmorEntity>of(AstolfoArmorEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<AstolfoArmorEntity>of(AstolfoArmorEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<FelixEntity>> FELIX = register("felix",
 			EntityType.Builder.<FelixEntity>of(FelixEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<AstolfoRepellentEntity>> ASTOLFO_REPELLENT = register("astolfo_repellent",
 			EntityType.Builder.<AstolfoRepellentEntity>of(AstolfoRepellentEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<BoykisserEntity>> BOYKISSER = register("boykisser",
 			EntityType.Builder.<BoykisserEntity>of(BoykisserEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<HideriKanzakiEntity>> HIDERI_KANZAKI = register("hideri_kanzaki",
-			EntityType.Builder.<HideriKanzakiEntity>of(HideriKanzakiEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<HideriKanzakiEntity>of(HideriKanzakiEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<VentiEntity>> VENTI = register("venti",
-			EntityType.Builder.<VentiEntity>of(VentiEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<VentiEntity>of(VentiEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<RimuruEntity>> RIMURU = register("rimuru",
-			EntityType.Builder.<RimuruEntity>of(RimuruEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<RimuruEntity>of(RimuruEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<NagisaShiotaEntity>> NAGISA_SHIOTA = register("nagisa_shiota",
-			EntityType.Builder.<NagisaShiotaEntity>of(NagisaShiotaEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<NagisaShiotaEntity>of(NagisaShiotaEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<SiegEntity>> SIEG = register("sieg",
-			EntityType.Builder.<SiegEntity>of(SiegEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<SiegEntity>of(SiegEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<BridgetEntity>> BRIDGET = register("bridget",
-			EntityType.Builder.<BridgetEntity>of(BridgetEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().sized(0.6f, 1.8f));
+			EntityType.Builder.<BridgetEntity>of(BridgetEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

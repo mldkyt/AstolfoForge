@@ -1,4 +1,3 @@
-
 package pet.lunya.astolfoforge.client.renderer;
 
 import pet.lunya.astolfoforge.entity.HideriKanzakiEntity;

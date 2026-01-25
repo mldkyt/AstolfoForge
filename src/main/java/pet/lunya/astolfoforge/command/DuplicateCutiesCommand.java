@@ -1,4 +1,3 @@
-
 package pet.lunya.astolfoforge.command;
 
 import pet.lunya.astolfoforge.procedures.DuplicateCutiesProcProcedure;

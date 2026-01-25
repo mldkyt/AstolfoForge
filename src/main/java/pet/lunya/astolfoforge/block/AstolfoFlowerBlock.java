@@ -1,4 +1,3 @@
-
 package pet.lunya.astolfoforge.block;
 
 import pet.lunya.astolfoforge.procedures.AstolfoFlowerPlantDestroyedByPlayerProcedure;
@@ -19,7 +18,7 @@ import net.minecraft.core.BlockPos;
 
 public class AstolfoFlowerBlock extends FlowerBlock {
 	public AstolfoFlowerBlock(BlockBehaviour.Properties properties) {
-		super(MobEffects.MOVEMENT_SPEED, 100, properties.mapColor(MapColor.PLANT).sound(SoundType.GRASS).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+		super(MobEffects.SPEED, 100, properties.mapColor(MapColor.PLANT).sound(SoundType.GRASS).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

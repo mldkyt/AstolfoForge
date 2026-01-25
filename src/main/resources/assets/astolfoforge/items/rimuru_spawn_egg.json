@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -16750849
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -10040065
-      }
-    ]
+    "model": "astolfoforge:item/rimuru_spawn_egg"
   }
 }

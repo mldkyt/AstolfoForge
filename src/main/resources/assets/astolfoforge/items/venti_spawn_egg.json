@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -16711732
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -16737895
-      }
-    ]
+    "model": "astolfoforge:item/venti_spawn_egg"
   }
 }

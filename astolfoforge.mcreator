@@ -8,9 +8,10 @@
       "registry_name": "astolfo_casual",
       "metadata": {
         "files": [
-          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoCasualEntity.java",
           "src/main/resources/assets/astolfoforge/items/astolfo_casual_spawn_egg.json",
           "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoCasualRenderer.java",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_casual_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoCasualEntity.java",
           "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_casual_biome_modifier.json"
         ]
       }
@@ -23,10 +24,11 @@
       "registry_name": "astolfo_schoolgirl",
       "metadata": {
         "files": [
-          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoSchoolgirlEntity.java",
           "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoSchoolgirlRenderer.java",
           "src/main/resources/assets/astolfoforge/items/astolfo_schoolgirl_spawn_egg.json",
-          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_schoolgirl_biome_modifier.json"
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_schoolgirl_biome_modifier.json",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_schoolgirl_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoSchoolgirlEntity.java"
         ]
       }
     },
@@ -38,10 +40,11 @@
       "registry_name": "astolfo_armor",
       "metadata": {
         "files": [
-          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoArmorRenderer.java",
-          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_armor_biome_modifier.json",
           "src/main/java/pet/lunya/astolfoforge/entity/AstolfoArmorEntity.java",
-          "src/main/resources/assets/astolfoforge/items/astolfo_armor_spawn_egg.json"
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_armor_spawn_egg.json",
+          "src/main/resources/assets/astolfoforge/items/astolfo_armor_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoArmorRenderer.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_armor_biome_modifier.json"
         ]
       }
     },
@@ -53,10 +56,11 @@
       "registry_name": "felix",
       "metadata": {
         "files": [
+          "src/main/java/pet/lunya/astolfoforge/entity/FelixEntity.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/felix_biome_modifier.json",
           "src/main/java/pet/lunya/astolfoforge/client/renderer/FelixRenderer.java",
           "src/main/resources/assets/astolfoforge/items/felix_spawn_egg.json",
-          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/felix_biome_modifier.json",
-          "src/main/java/pet/lunya/astolfoforge/entity/FelixEntity.java"
+          "src/main/resources/assets/astolfoforge/models/item/felix_spawn_egg.json"
         ]
       }
     },
@@ -116,9 +120,9 @@
       "registry_name": "monster_white",
       "metadata": {
         "files": [
+          "src/main/resources/assets/astolfoforge/items/monster_white.json",
           "src/main/java/pet/lunya/astolfoforge/item/MonsterWhiteItem.java",
-          "src/main/resources/assets/astolfoforge/models/item/monster_white.json",
-          "src/main/resources/assets/astolfoforge/items/monster_white.json"
+          "src/main/resources/assets/astolfoforge/models/item/monster_white.json"
         ]
       }
     },
@@ -130,9 +134,9 @@
       "registry_name": "astolfo_item",
       "metadata": {
         "files": [
+          "src/main/resources/assets/astolfoforge/items/astolfo_item.json",
           "src/main/java/pet/lunya/astolfoforge/item/AstolfoItemItem.java",
-          "src/main/resources/assets/astolfoforge/models/item/astolfo_item.json",
-          "src/main/resources/assets/astolfoforge/items/astolfo_item.json"
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_item.json"
         ]
       }
     },
@@ -154,9 +158,9 @@
       "registry_name": "astolfo_biome",
       "metadata": {
         "files": [
-          "src/main/resources/data/astolfoforge/worldgen/placed_feature/astolfo_biome_tree.json",
+          "src/main/resources/data/astolfoforge/worldgen/configured_feature/astolfo_biome_tree.json",
           "src/main/resources/data/astolfoforge/worldgen/biome/astolfo_biome.json",
-          "src/main/resources/data/astolfoforge/worldgen/configured_feature/astolfo_biome_tree.json"
+          "src/main/resources/data/astolfoforge/worldgen/placed_feature/astolfo_biome_tree.json"
         ]
       }
     },
@@ -168,9 +172,9 @@
       "registry_name": "astolfo_attracotr",
       "metadata": {
         "files": [
-          "src/main/java/pet/lunya/astolfoforge/item/AstolfoAttracotrItem.java",
           "src/main/resources/assets/astolfoforge/models/item/astolfo_attracotr.json",
-          "src/main/resources/assets/astolfoforge/items/astolfo_attracotr.json"
+          "src/main/resources/assets/astolfoforge/items/astolfo_attracotr.json",
+          "src/main/java/pet/lunya/astolfoforge/item/AstolfoAttracotrItem.java"
         ]
       }
     },
@@ -182,9 +186,10 @@
       "registry_name": "astolfo_repellent",
       "metadata": {
         "files": [
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoRepellentRenderer.java",
           "src/main/resources/assets/astolfoforge/items/astolfo_repellent_spawn_egg.json",
           "src/main/java/pet/lunya/astolfoforge/entity/AstolfoRepellentEntity.java",
-          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoRepellentRenderer.java",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_repellent_spawn_egg.json",
           "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_repellent_biome_modifier.json"
         ]
       }
@@ -198,9 +203,10 @@
       "metadata": {
         "files": [
           "src/main/resources/data/astolfoforge/neoforge/biome_modifier/boykisser_biome_modifier.json",
+          "src/main/resources/assets/astolfoforge/items/boykisser_spawn_egg.json",
           "src/main/java/pet/lunya/astolfoforge/entity/BoykisserEntity.java",
           "src/main/java/pet/lunya/astolfoforge/client/renderer/BoykisserRenderer.java",
-          "src/main/resources/assets/astolfoforge/items/boykisser_spawn_egg.json"
+          "src/main/resources/assets/astolfoforge/models/item/boykisser_spawn_egg.json"
         ]
       }
     },
@@ -212,10 +218,11 @@
       "registry_name": "hideri_kanzaki",
       "metadata": {
         "files": [
-          "src/main/java/pet/lunya/astolfoforge/client/renderer/HideriKanzakiRenderer.java",
           "src/main/java/pet/lunya/astolfoforge/entity/HideriKanzakiEntity.java",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/HideriKanzakiRenderer.java",
+          "src/main/resources/assets/astolfoforge/items/hideri_kanzaki_spawn_egg.json",
           "src/main/resources/data/astolfoforge/neoforge/biome_modifier/hideri_kanzaki_biome_modifier.json",
-          "src/main/resources/assets/astolfoforge/items/hideri_kanzaki_spawn_egg.json"
+          "src/main/resources/assets/astolfoforge/models/item/hideri_kanzaki_spawn_egg.json"
         ]
       }
     },
@@ -227,10 +234,11 @@
       "registry_name": "venti",
       "metadata": {
         "files": [
-          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/venti_biome_modifier.json",
           "src/main/resources/assets/astolfoforge/items/venti_spawn_egg.json",
+          "src/main/resources/assets/astolfoforge/models/item/venti_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/VentiRenderer.java",
           "src/main/java/pet/lunya/astolfoforge/entity/VentiEntity.java",
-          "src/main/java/pet/lunya/astolfoforge/client/renderer/VentiRenderer.java"
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/venti_biome_modifier.json"
         ]
       }
     },
@@ -242,10 +250,11 @@
       "registry_name": "rimuru",
       "metadata": {
         "files": [
-          "src/main/resources/assets/astolfoforge/items/rimuru_spawn_egg.json",
-          "src/main/java/pet/lunya/astolfoforge/entity/RimuruEntity.java",
           "src/main/resources/data/astolfoforge/neoforge/biome_modifier/rimuru_biome_modifier.json",
-          "src/main/java/pet/lunya/astolfoforge/client/renderer/RimuruRenderer.java"
+          "src/main/resources/assets/astolfoforge/models/item/rimuru_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/RimuruRenderer.java",
+          "src/main/resources/assets/astolfoforge/items/rimuru_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/RimuruEntity.java"
         ]
       }
     },
@@ -257,10 +266,11 @@
       "registry_name": "nagisa_shiota",
       "metadata": {
         "files": [
-          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/nagisa_shiota_biome_modifier.json",
           "src/main/java/pet/lunya/astolfoforge/entity/NagisaShiotaEntity.java",
+          "src/main/resources/assets/astolfoforge/models/item/nagisa_shiota_spawn_egg.json",
+          "src/main/resources/assets/astolfoforge/items/nagisa_shiota_spawn_egg.json",
           "src/main/java/pet/lunya/astolfoforge/client/renderer/NagisaShiotaRenderer.java",
-          "src/main/resources/assets/astolfoforge/items/nagisa_shiota_spawn_egg.json"
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/nagisa_shiota_biome_modifier.json"
         ]
       }
     },
@@ -319,9 +329,10 @@
       "metadata": {
         "files": [
           "src/main/java/pet/lunya/astolfoforge/client/renderer/SiegRenderer.java",
+          "src/main/resources/assets/astolfoforge/models/item/sieg_spawn_egg.json",
           "src/main/java/pet/lunya/astolfoforge/entity/SiegEntity.java",
-          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/sieg_biome_modifier.json",
-          "src/main/resources/assets/astolfoforge/items/sieg_spawn_egg.json"
+          "src/main/resources/assets/astolfoforge/items/sieg_spawn_egg.json",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/sieg_biome_modifier.json"
         ]
       }
     },
@@ -333,10 +344,11 @@
       "registry_name": "bridget",
       "metadata": {
         "files": [
+          "src/main/resources/assets/astolfoforge/models/item/bridget_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/BridgetEntity.java",
           "src/main/resources/data/astolfoforge/neoforge/biome_modifier/bridget_biome_modifier.json",
           "src/main/java/pet/lunya/astolfoforge/client/renderer/BridgetRenderer.java",
-          "src/main/resources/assets/astolfoforge/items/bridget_spawn_egg.json",
-          "src/main/java/pet/lunya/astolfoforge/entity/BridgetEntity.java"
+          "src/main/resources/assets/astolfoforge/items/bridget_spawn_egg.json"
         ]
       }
     },
@@ -348,15 +360,15 @@
       "registry_name": "astolfo_flower",
       "metadata": {
         "files": [
-          "src/main/resources/assets/astolfoforge/models/item/astolfo_flower.json",
           "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_flower_biome_modifier.json",
-          "src/main/resources/data/astolfoforge/loot_table/blocks/astolfo_flower.json",
-          "src/main/resources/data/astolfoforge/worldgen/configured_feature/astolfo_flower.json",
-          "src/main/resources/assets/astolfoforge/blockstates/astolfo_flower.json",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_flower.json",
           "src/main/resources/assets/astolfoforge/models/block/astolfo_flower.json",
           "src/main/java/pet/lunya/astolfoforge/block/AstolfoFlowerBlock.java",
           "src/main/resources/assets/astolfoforge/items/astolfo_flower.json",
-          "src/main/resources/data/astolfoforge/worldgen/placed_feature/astolfo_flower.json"
+          "src/main/resources/data/astolfoforge/worldgen/configured_feature/astolfo_flower.json",
+          "src/main/resources/assets/astolfoforge/blockstates/astolfo_flower.json",
+          "src/main/resources/data/astolfoforge/worldgen/placed_feature/astolfo_flower.json",
+          "src/main/resources/data/astolfoforge/loot_table/blocks/astolfo_flower.json"
         ]
       }
     },
@@ -451,6 +463,24 @@
       "biome.astolfoforge.astolfo_biome": "Astolfo Biome"
     }
   },
+  "metadata": {
+    "files": [
+      "src/main/java/pet/lunya/astolfoforge/mixin/NoiseGeneratorSettingsMixin.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModBiomes.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModBlocks.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModItems.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModEntities.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModEntityRenderers.java",
+      "src/main/java/pet/lunya/astolfoforge/AstolfoforgeMod.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModSounds.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModTabs.java",
+      "src/main/resources/astolfoforge.mixins.json",
+      "src/main/resources/pack.mcmeta",
+      "src/main/resources/META-INF/accesstransformer.cfg",
+      "src/main/resources/assets/astolfoforge/sounds.json"
+    ]
+  },
   "foldersRoot": {
     "name": "~",
     "children": []
@@ -468,9 +498,9 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "neoforge-1.21.4",
+    "currentGenerator": "neoforge-1.21.8",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "pet.lunya.astolfoforge"
   },
-  "mcreatorVersion": 202500113416
+  "mcreatorVersion": 202500345720
 }

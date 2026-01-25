@@ -1,28 +1,16 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
 package pet.lunya.astolfoforge.init;
 
-import pet.lunya.astolfoforge.client.renderer.VentiRenderer;
-import pet.lunya.astolfoforge.client.renderer.SiegRenderer;
-import pet.lunya.astolfoforge.client.renderer.RimuruRenderer;
-import pet.lunya.astolfoforge.client.renderer.NagisaShiotaRenderer;
-import pet.lunya.astolfoforge.client.renderer.HideriKanzakiRenderer;
-import pet.lunya.astolfoforge.client.renderer.FelixRenderer;
-import pet.lunya.astolfoforge.client.renderer.BridgetRenderer;
-import pet.lunya.astolfoforge.client.renderer.BoykisserRenderer;
-import pet.lunya.astolfoforge.client.renderer.AstolfoSchoolgirlRenderer;
-import pet.lunya.astolfoforge.client.renderer.AstolfoRepellentRenderer;
-import pet.lunya.astolfoforge.client.renderer.AstolfoCasualRenderer;
-import pet.lunya.astolfoforge.client.renderer.AstolfoArmorRenderer;
+import pet.lunya.astolfoforge.client.renderer.*;
 
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(Dist.CLIENT)
 public class AstolfoforgeModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {

@@ -1,4 +1,3 @@
-
 package pet.lunya.astolfoforge.entity;
 
 import pet.lunya.astolfoforge.init.AstolfoforgeModEntities;

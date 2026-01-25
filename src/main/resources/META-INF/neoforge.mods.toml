@@ -14,17 +14,23 @@ description="Astolfo Forge adds a bunch of femboys into Minecraft."
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
+[[mixins]]
+    config = "astolfoforge.mixins.json"
+
+# Start of user code block custom mixins
+# End of user code block custom mixins
+
 [[dependencies.astolfoforge]]
     modId="neoforge"
     type="required"
-    versionRange="[21.4.123,)"
+    versionRange="[21.8.31,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.astolfoforge]]
     modId="minecraft"
     type="required"
-    versionRange="[1.21.4]"
+    versionRange="[1.21.8]"
     ordering="AFTER"
     side="BOTH"
 

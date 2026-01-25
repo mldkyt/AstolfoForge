@@ -1,0 +1,490 @@
+{
+  "mod_elements": [
+    {
+      "name": "AstolfoCasual",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_casual",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoCasualRenderer.java",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_casual_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoCasualEntity.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_casual_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoSchoolgirl",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_schoolgirl",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoSchoolgirlRenderer.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_schoolgirl_biome_modifier.json",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_schoolgirl_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoSchoolgirlEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoArmor",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_armor",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoArmorEntity.java",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_armor_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoArmorRenderer.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_armor_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "Felix",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "felix",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/entity/FelixEntity.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/felix_biome_modifier.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/FelixRenderer.java",
+          "src/main/resources/assets/astolfoforge/models/item/felix_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "DespawnProc",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "despawn_proc",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/procedures/DespawnProcProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Despawn",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "despawn",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/command/DespawnCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "MonsterWhitePlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "monster_white_player_finishes_using_item",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/procedures/MonsterWhitePlayerFinishesUsingItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MonsterWhite",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "monster_white",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/item/MonsterWhiteItem.java",
+          "src/main/resources/assets/astolfoforge/models/item/monster_white.json"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoItem",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_item",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/item/AstolfoItemItem.java",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_item.json"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoTab",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_tab",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "AstolfoBiome",
+      "type": "biome",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_biome",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/astolfoforge/worldgen/configured_feature/astolfo_biome_tree.json",
+          "src/main/resources/data/astolfoforge/worldgen/biome/astolfo_biome.json",
+          "src/main/resources/data/astolfoforge/worldgen/placed_feature/astolfo_biome_tree.json"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoAttracotr",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_attracotr",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_attracotr.json",
+          "src/main/java/pet/lunya/astolfoforge/item/AstolfoAttracotrItem.java"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoRepellent",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_repellent",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/AstolfoRepellentRenderer.java",
+          "src/main/java/pet/lunya/astolfoforge/entity/AstolfoRepellentEntity.java",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_repellent_spawn_egg.json",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_repellent_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "Boykisser",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boykisser",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/boykisser_biome_modifier.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/BoykisserEntity.java",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/BoykisserRenderer.java",
+          "src/main/resources/assets/astolfoforge/models/item/boykisser_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "HideriKanzaki",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hideri_kanzaki",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/entity/HideriKanzakiEntity.java",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/HideriKanzakiRenderer.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/hideri_kanzaki_biome_modifier.json",
+          "src/main/resources/assets/astolfoforge/models/item/hideri_kanzaki_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "Venti",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "venti",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/astolfoforge/models/item/venti_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/VentiRenderer.java",
+          "src/main/java/pet/lunya/astolfoforge/entity/VentiEntity.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/venti_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "Rimuru",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rimuru",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/rimuru_biome_modifier.json",
+          "src/main/resources/assets/astolfoforge/models/item/rimuru_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/RimuruRenderer.java",
+          "src/main/java/pet/lunya/astolfoforge/entity/RimuruEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "NagisaShiota",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nagisa_shiota",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/entity/NagisaShiotaEntity.java",
+          "src/main/resources/assets/astolfoforge/models/item/nagisa_shiota_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/NagisaShiotaRenderer.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/nagisa_shiota_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "DuplicateCutiesProc",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "duplicate_cuties_proc",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/procedures/DuplicateCutiesProcProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DuplicateCuties",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "duplicate_cuties",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/command/DuplicateCutiesCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "Sieg",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sieg",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/SiegRenderer.java",
+          "src/main/resources/assets/astolfoforge/models/item/sieg_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/SiegEntity.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/sieg_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "Bridget",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bridget",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/astolfoforge/models/item/bridget_spawn_egg.json",
+          "src/main/java/pet/lunya/astolfoforge/entity/BridgetEntity.java",
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/bridget_biome_modifier.json",
+          "src/main/java/pet/lunya/astolfoforge/client/renderer/BridgetRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoFlower",
+      "type": "plant",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_flower",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/astolfoforge/neoforge/biome_modifier/astolfo_flower_biome_modifier.json",
+          "src/main/resources/assets/astolfoforge/models/item/astolfo_flower.json",
+          "src/main/resources/assets/astolfoforge/models/block/astolfo_flower.json",
+          "src/main/java/pet/lunya/astolfoforge/block/AstolfoFlowerBlock.java",
+          "src/main/resources/data/astolfoforge/worldgen/configured_feature/astolfo_flower.json",
+          "src/main/resources/assets/astolfoforge/blockstates/astolfo_flower.json",
+          "src/main/resources/data/astolfoforge/worldgen/placed_feature/astolfo_flower.json",
+          "src/main/resources/data/astolfoforge/loot_table/blocks/astolfo_flower.json"
+        ]
+      }
+    },
+    {
+      "name": "AstolfoFlowerPlantDestroyedByPlayer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astolfo_flower_plant_destroyed_by_player",
+      "metadata": {
+        "files": [
+          "src/main/java/pet/lunya/astolfoforge/procedures/AstolfoFlowerPlantDestroyedByPlayerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "astolfo_yahoo",
+      "files": [
+        "astolfo-yahoo"
+      ],
+      "category": "ambient",
+      "subtitle": "Yahoo!"
+    }
+  ],
+  "tag_elements": {
+    "BIOMES:minecraft:has_structure/stronghold": [
+      "~CUSTOM:AstolfoBiome"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft": [
+      "~CUSTOM:AstolfoBiome"
+    ],
+    "BIOMES:minecraft:has_structure/village_plains": [
+      "~CUSTOM:AstolfoBiome"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "block.astolfoforge.astolfo_flower": "Astolfo Flower",
+      "entity.astolfoforge.bridget": "Bridget",
+      "item.astolfoforge.astolfo_repellent_spawn_egg": "Astolfo Repellent Spawn Egg",
+      "entity.astolfoforge.astolfo_repellent": "Astolfo Repellent",
+      "entity.astolfoforge.astolfo_armor": "Astolfo Armor",
+      "item.astolfoforge.bridget_spawn_egg": "Bridget Spawn Egg",
+      "entity.astolfoforge.sieg": "Sieg",
+      "entity.astolfoforge.nagisa_shiota": "Nagisa Shiota",
+      "item_group.astolfoforge.astolfo_tab": "Astolfo Mod",
+      "item.astolfoforge.rimuru_spawn_egg": "Rimuru Spawn Egg",
+      "entity.astolfoforge.hideri_kanzaki": "Hideri Kanzaki",
+      "entity.astolfoforge.astolfo_schoolgirl": "Astolfo Schoolgirl",
+      "item.astolfoforge.venti_spawn_egg": "Venti Spawn Egg",
+      "subtitles.fate_apocrypha": "",
+      "item.astolfoforge.monster_white": "Monster Energy White",
+      "entity.astolfoforge.rimuru": "Rimuru",
+      "item.astolfoforge.sieg_spawn_egg": "Sieg Spawn Egg",
+      "subtitles.astolfo_yahoo": "Yahoo!",
+      "item.astolfoforge.astolfo_flower": "Astolfo Flower",
+      "item.astolfoforge.astolfo_casual_spawn_egg": "Astolfo Casual Spawn Egg",
+      "item.astolfoforge.astolfo_attracotr": "[Creative]Astolfo Attractor",
+      "entity.astolfoforge.boykisser": "Boykisser",
+      "item.astolfoforge.boykisser_spawn_egg": "Boykisser Spawn Egg",
+      "entity.astolfoforge.venti": "Venti",
+      "item.astolfoforge.astolfo_armor_spawn_egg": "Astolfo Armor Spawn Egg",
+      "item.astolfoforge.felix_spawn_egg": "Felix Spawn Egg",
+      "item.astolfoforge.hideri_kanzaki_spawn_egg": "Hideri Kanzaki Spawn Egg",
+      "entity.astolfoforge.astolfo_casual": "Astolfo Casual",
+      "entity.astolfoforge.felix": "Felix",
+      "item.astolfoforge.astolfo_item": "me.programmerastolfo.astolfo.items.AstolfoItem",
+      "item.astolfoforge.astolfo_schoolgirl_spawn_egg": "Astolfo Schoolgirl Spawn Egg",
+      "item.astolfoforge.nagisa_shiota_spawn_egg": "Nagisa Shiota Spawn Egg",
+      "biome.astolfoforge.astolfo_biome": "Astolfo Biome"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/pet/lunya/astolfoforge/mixin/NoiseGeneratorSettingsMixin.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModBiomes.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModBlocks.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModItems.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModEntities.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModEntityRenderers.java",
+      "src/main/java/pet/lunya/astolfoforge/AstolfoforgeMod.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModSounds.java",
+      "src/main/java/pet/lunya/astolfoforge/init/AstolfoforgeModTabs.java",
+      "src/main/resources/astolfoforge.mixins.json",
+      "src/main/resources/pack.mcmeta",
+      "src/main/resources/META-INF/accesstransformer.cfg",
+      "src/main/resources/assets/astolfoforge/sounds.json"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "astolfoforge",
+    "modName": "astolfoforge",
+    "version": "1.3.1",
+    "description": "Astolfo Forge adds a bunch of femboys into Minecraft.",
+    "author": "Lunya.pet",
+    "websiteURL": "https://lunya.pet",
+    "license": "GNU General Public License version 3 (GPLv3)",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "pet.lunya.astolfoforge"
+  },
+  "mcreatorVersion": 202500345720
+}

@@ -1,17 +1,7 @@
 package pet.lunya.astolfoforge.procedures;
 
 import pet.lunya.astolfoforge.init.AstolfoforgeModEntities;
-import pet.lunya.astolfoforge.entity.VentiEntity;
-import pet.lunya.astolfoforge.entity.SiegEntity;
-import pet.lunya.astolfoforge.entity.RimuruEntity;
-import pet.lunya.astolfoforge.entity.NagisaShiotaEntity;
-import pet.lunya.astolfoforge.entity.HideriKanzakiEntity;
-import pet.lunya.astolfoforge.entity.FelixEntity;
-import pet.lunya.astolfoforge.entity.BridgetEntity;
-import pet.lunya.astolfoforge.entity.BoykisserEntity;
-import pet.lunya.astolfoforge.entity.AstolfoSchoolgirlEntity;
-import pet.lunya.astolfoforge.entity.AstolfoCasualEntity;
-import pet.lunya.astolfoforge.entity.AstolfoArmorEntity;
+import pet.lunya.astolfoforge.entity.*;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
