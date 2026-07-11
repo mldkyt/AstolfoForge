@@ -2,8 +2,6 @@ package pet.lunya.astolfoforge.command;
 
 import pet.lunya.astolfoforge.procedures.DuplicateCutiesProcProcedure;
 
-import org.checkerframework.checker.units.qual.s;
-
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -21,8 +19,8 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 public class DuplicateCutiesCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(
-				Commands.literal("duplicatecuties").requires(s -> s.hasPermission(2)).then(Commands.argument("amount", DoubleArgumentType.doubleArg(0)).then(Commands.argument("radius", DoubleArgumentType.doubleArg(0)).executes(arguments -> {
+		event.getDispatcher().register(Commands.literal("duplicatecuties").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
+				.then(Commands.argument("amount", DoubleArgumentType.doubleArg(0)).then(Commands.argument("radius", DoubleArgumentType.doubleArg(0)).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

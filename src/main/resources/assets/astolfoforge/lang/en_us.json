@@ -31,5 +31,7 @@
   "item.astolfoforge.astolfo_item": "me.programmerastolfo.astolfo.items.AstolfoItem",
   "item.astolfoforge.astolfo_schoolgirl_spawn_egg": "Astolfo Schoolgirl Spawn Egg",
   "item.astolfoforge.nagisa_shiota_spawn_egg": "Nagisa Shiota Spawn Egg",
-  "biome.astolfoforge.astolfo_biome": "Astolfo Biome"
+  "biome.astolfoforge.astolfo_biome": "Astolfo Biome",
+  "item.astolfoforge.mahiro_spawn_egg": "Mahiro Spawn Egg",
+  "entity.astolfoforge.mahiro": "Mahiro"
 }

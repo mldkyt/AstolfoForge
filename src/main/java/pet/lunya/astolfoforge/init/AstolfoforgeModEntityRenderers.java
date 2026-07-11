@@ -26,5 +26,6 @@ public class AstolfoforgeModEntityRenderers {
 		event.registerEntityRenderer(AstolfoforgeModEntities.NAGISA_SHIOTA.get(), NagisaShiotaRenderer::new);
 		event.registerEntityRenderer(AstolfoforgeModEntities.SIEG.get(), SiegRenderer::new);
 		event.registerEntityRenderer(AstolfoforgeModEntities.BRIDGET.get(), BridgetRenderer::new);
+		event.registerEntityRenderer(AstolfoforgeModEntities.MAHIRO.get(), MahiroRenderer::new);
 	}
 }

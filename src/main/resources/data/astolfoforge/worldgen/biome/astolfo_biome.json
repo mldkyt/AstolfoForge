@@ -3,18 +3,22 @@
   "temperature": 0.5,
   "downfall": 0.5,
   "effects": {
-    "particle": {
-      "options": {
-        "type": "heart"
-      },
-      "probability": 0.001
-    },
     "foliage_color": -26113,
     "grass_color": -26113,
-    "sky_color": -26113,
-    "fog_color": -26113,
-    "water_color": -26113,
-    "water_fog_color": -26113
+    "water_color": -26113
+  },
+  "attributes": {
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "heart"
+        },
+        "probability": 0.001
+      }
+    ],
+    "minecraft:visual/sky_color": -26113,
+    "minecraft:visual/fog_color": -26113,
+    "minecraft:visual/water_fog_color": -26113
   },
   "spawners": {
     "monster": [],

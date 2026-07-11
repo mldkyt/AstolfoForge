@@ -12,7 +12,7 @@ import net.minecraft.core.BlockPos;
 
 public class AstolfoFlowerPlantDestroyedByPlayerProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 1, 16); index0++) {
+		for (int index1 = 0; index1 < Mth.nextInt(RandomSource.create(), 1, 16); index1++) {
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_ARMOR.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
 				if (entityToSpawn != null) {
@@ -20,7 +20,7 @@ public class AstolfoFlowerPlantDestroyedByPlayerProcedure {
 				}
 			}
 		}
-		for (int index1 = 0; index1 < Mth.nextInt(RandomSource.create(), 1, 16); index1++) {
+		for (int index2 = 0; index2 < Mth.nextInt(RandomSource.create(), 1, 16); index2++) {
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_CASUAL.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
 				if (entityToSpawn != null) {
@@ -28,7 +28,7 @@ public class AstolfoFlowerPlantDestroyedByPlayerProcedure {
 				}
 			}
 		}
-		for (int index2 = 0; index2 < Mth.nextInt(RandomSource.create(), 1, 16); index2++) {
+		for (int index3 = 0; index3 < Mth.nextInt(RandomSource.create(), 1, 16); index3++) {
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_SCHOOLGIRL.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
 				if (entityToSpawn != null) {

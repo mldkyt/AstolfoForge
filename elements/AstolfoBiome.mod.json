@@ -1,17 +1,11 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "biome",
   "definition": {
     "name": "Astolfo Biome",
-    "groundBlock": {
-      "value": "Blocks.GRASS"
-    },
-    "undergroundBlock": {
-      "value": "Blocks.DIRT#0"
-    },
-    "underwaterBlock": {
-      "value": ""
-    },
+    "groundBlock": "Blocks.GRASS",
+    "undergroundBlock": "Blocks.DIRT#0",
+    "underwaterBlock": "",
     "airColor": {
       "value": -26113,
       "falpha": 0.0
@@ -36,23 +30,13 @@
       "value": -26113,
       "falpha": 0.0
     },
-    "ambientSound": {
-      "value": ""
-    },
-    "additionsSound": {
-      "value": ""
-    },
-    "music": {
-      "value": ""
-    },
-    "moodSound": {
-      "value": ""
-    },
+    "ambientSound": "",
+    "additionsSound": "",
+    "music": "",
+    "moodSound": "",
     "moodSoundDelay": 6000,
     "spawnParticles": true,
-    "particleToSpawn": {
-      "value": "HEART"
-    },
+    "particleToSpawn": "HEART",
     "particlesProbability": 0.1,
     "rainingPossibility": 0.5,
     "temperature": 0.5,
@@ -79,22 +63,18 @@
       "min": -0.9,
       "max": 0.9
     },
+    "genDepth": {
+      "min": 0.2,
+      "max": 0.9
+    },
     "treesPerChunk": 2,
     "vanillaTreeType": "Default",
     "treeType": 0,
     "minHeight": 7,
-    "treeStem": {
-      "value": ""
-    },
-    "treeBranch": {
-      "value": ""
-    },
-    "treeVines": {
-      "value": ""
-    },
-    "treeFruits": {
-      "value": ""
-    },
+    "treeStem": "",
+    "treeBranch": "",
+    "treeVines": "",
+    "treeFruits": "",
     "defaultFeatures": [
       "Caves",
       "Ores",
@@ -124,27 +104,21 @@
     "spawnRuinedPortal": "NONE",
     "spawnEntries": [
       {
-        "entity": {
-          "value": "CUSTOM:AstolfoArmor"
-        },
+        "entity": "CUSTOM:AstolfoArmor",
         "minGroup": 99,
         "maxGroup": 99,
         "weight": 20,
         "spawnType": "creature"
       },
       {
-        "entity": {
-          "value": "CUSTOM:AstolfoCasual"
-        },
+        "entity": "CUSTOM:AstolfoCasual",
         "minGroup": 99,
         "maxGroup": 99,
         "weight": 20,
         "spawnType": "creature"
       },
       {
-        "entity": {
-          "value": "CUSTOM:AstolfoSchoolgirl"
-        },
+        "entity": "CUSTOM:AstolfoSchoolgirl",
         "minGroup": 99,
         "maxGroup": 99,
         "weight": 20,

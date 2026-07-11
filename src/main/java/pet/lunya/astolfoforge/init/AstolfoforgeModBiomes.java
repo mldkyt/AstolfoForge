@@ -4,6 +4,7 @@
 package pet.lunya.astolfoforge.init;
 
 import net.neoforged.neoforge.event.server.ServerAboutToStartEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 
@@ -14,68 +15,41 @@ import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
-import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
-import net.minecraft.world.level.biome.FeatureSorter;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.Registry;
 import net.minecraft.core.Holder;
 
+import java.util.function.Function;
 import java.util.List;
 import java.util.ArrayList;
 
 import com.mojang.datafixers.util.Pair;
 
-import com.google.common.base.Suppliers;
-
 @EventBusSubscriber
 public class AstolfoforgeModBiomes {
+	public static final Identifier OVERWORLD_BIOMESOURCE_PRESET_ID = Identifier.withDefaultNamespace("overworld");
+	public static final Identifier NETHER_BIOMESOURCE_PRESET_ID = Identifier.withDefaultNamespace("nether");
+	private static boolean BOOTSTRAP_VALIDATION_PASSED = false;
+
+	@SubscribeEvent
+	public static void onCommonSetup(FMLCommonSetupEvent event) {
+		BOOTSTRAP_VALIDATION_PASSED = true;
+	}
+
 	@SubscribeEvent
 	public static void onServerAboutToStart(ServerAboutToStartEvent event) {
-		MinecraftServer server = event.getServer();
-		Registry<LevelStem> levelStemTypeRegistry = server.registryAccess().lookupOrThrow(Registries.LEVEL_STEM);
-		Registry<Biome> biomeRegistry = server.registryAccess().lookupOrThrow(Registries.BIOME);
+		Registry<LevelStem> levelStemTypeRegistry = event.getServer().registryAccess().lookupOrThrow(Registries.LEVEL_STEM);
 		for (LevelStem levelStem : levelStemTypeRegistry.stream().toList()) {
 			Holder<DimensionType> dimensionType = levelStem.type();
-			if (dimensionType.is(BuiltinDimensionTypes.OVERWORLD)) {
-				ChunkGenerator chunkGenerator = levelStem.generator();
-				// Inject biomes to biome source
-				if (chunkGenerator.getBiomeSource() instanceof MultiNoiseBiomeSource noiseSource) {
-					List<Pair<Climate.ParameterPoint, Holder<Biome>>> parameters = new ArrayList<>(noiseSource.parameters().values());
-					addParameterPoint(parameters, new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f),
-							Climate.Parameter.point(0.0f), Climate.Parameter.span(-0.9f, 0.9f), 0), biomeRegistry.getOrThrow(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
-					addParameterPoint(parameters, new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f),
-							Climate.Parameter.point(1.0f), Climate.Parameter.span(-0.9f, 0.9f), 0), biomeRegistry.getOrThrow(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
-					chunkGenerator.biomeSource = MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(parameters));
-					chunkGenerator.featuresPerStep = Suppliers
-							.memoize(() -> FeatureSorter.buildFeaturesPerStep(List.copyOf(chunkGenerator.biomeSource.possibleBiomes()), biome -> chunkGenerator.generationSettingsGetter.apply(biome).features(), true));
-				}
-				if (chunkGenerator instanceof NoiseBasedChunkGenerator noiseGenerator) {
-					((AstolfoforgeModNoiseGeneratorSettings) (Object) noiseGenerator.settings.value()).setastolfoforgeDimensionTypeReference(dimensionType);
-				}
-			}
-			if (dimensionType.is(BuiltinDimensionTypes.NETHER)) {
-				ChunkGenerator chunkGenerator = levelStem.generator();
-				// Inject biomes to biome source
-				if (chunkGenerator.getBiomeSource() instanceof MultiNoiseBiomeSource noiseSource) {
-					List<Pair<Climate.ParameterPoint, Holder<Biome>>> parameters = new ArrayList<>(noiseSource.parameters().values());
-					addParameterPoint(parameters, new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f),
-							Climate.Parameter.point(0.0f), Climate.Parameter.span(-0.9f, 0.9f), 0), biomeRegistry.getOrThrow(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
-					addParameterPoint(parameters, new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f),
-							Climate.Parameter.point(1.0f), Climate.Parameter.span(-0.9f, 0.9f), 0), biomeRegistry.getOrThrow(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
-					chunkGenerator.biomeSource = MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(parameters));
-					chunkGenerator.featuresPerStep = Suppliers
-							.memoize(() -> FeatureSorter.buildFeaturesPerStep(List.copyOf(chunkGenerator.biomeSource.possibleBiomes()), biome -> chunkGenerator.generationSettingsGetter.apply(biome).features(), true));
-				}
-				if (chunkGenerator instanceof NoiseBasedChunkGenerator noiseGenerator) {
-					((AstolfoforgeModNoiseGeneratorSettings) (Object) noiseGenerator.settings.value()).setastolfoforgeDimensionTypeReference(dimensionType);
+			if (dimensionType.is(BuiltinDimensionTypes.NETHER) || dimensionType.is(BuiltinDimensionTypes.OVERWORLD)) {
+				if (levelStem.generator() instanceof NoiseBasedChunkGenerator noiseGenerator) {
+					((AstolfoforgeModNoiseGeneratorSettings) (Object) noiseGenerator.generatorSettings().value()).setastolfoforgeDimensionTypeReference(dimensionType);
 				}
 			}
 		}
@@ -89,10 +63,20 @@ public class AstolfoforgeModBiomes {
 		return currentRuleSource;
 	}
 
+	public static <T> Climate.ParameterList<T> adaptPresetParameterList(Identifier idArg, Climate.ParameterList<T> originalList, Function<ResourceKey<Biome>, T> lookup) {
+		if (!BOOTSTRAP_VALIDATION_PASSED)
+			return originalList;
+		if (idArg.equals(OVERWORLD_BIOMESOURCE_PRESET_ID))
+			return AstolfoforgeModBiomes.modifyOverworldParameterPoints(originalList, lookup);
+		if (idArg.equals(NETHER_BIOMESOURCE_PRESET_ID))
+			return AstolfoforgeModBiomes.modifyNetherParameterPoints(originalList, lookup);
+		return originalList;
+	}
+
 	private static SurfaceRules.RuleSource injectOverworldSurfaceRules(SurfaceRules.RuleSource currentRuleSource) {
 		List<SurfaceRules.RuleSource> customSurfaceRules = new ArrayList<>();
-		customSurfaceRules.add(preliminarySurfaceRule(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(),
-				Blocks.DIRT.defaultBlockState()));
+		customSurfaceRules.add(
+				preliminarySurfaceRule(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState()));
 		if (currentRuleSource instanceof SurfaceRules.SequenceRuleSource sequenceRuleSource) {
 			customSurfaceRules.addAll(sequenceRuleSource.sequence());
 			return SurfaceRules.sequence(customSurfaceRules.toArray(SurfaceRules.RuleSource[]::new));
@@ -102,10 +86,19 @@ public class AstolfoforgeModBiomes {
 		}
 	}
 
+	public static <T> Climate.ParameterList<T> modifyOverworldParameterPoints(Climate.ParameterList<T> originalList, Function<ResourceKey<Biome>, T> lookup) {
+		List<Pair<Climate.ParameterPoint, T>> parameters = new ArrayList<>(originalList.values());
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(0.0f),
+				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(1.0f),
+				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		return new Climate.ParameterList<>(parameters);
+	}
+
 	private static SurfaceRules.RuleSource injectNetherSurfaceRules(SurfaceRules.RuleSource currentRuleSource) {
 		List<SurfaceRules.RuleSource> customSurfaceRules = new ArrayList<>();
-		customSurfaceRules.add(
-				anySurfaceRule(ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState()));
+		customSurfaceRules
+				.add(anySurfaceRule(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")), Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.DIRT.defaultBlockState(), Blocks.DIRT.defaultBlockState()));
 		if (currentRuleSource instanceof SurfaceRules.SequenceRuleSource sequenceRuleSource) {
 			customSurfaceRules.addAll(sequenceRuleSource.sequence());
 			return SurfaceRules.sequence(customSurfaceRules.toArray(SurfaceRules.RuleSource[]::new));
@@ -113,6 +106,15 @@ public class AstolfoforgeModBiomes {
 			customSurfaceRules.add(currentRuleSource);
 			return SurfaceRules.sequence(customSurfaceRules.toArray(SurfaceRules.RuleSource[]::new));
 		}
+	}
+
+	public static <T> Climate.ParameterList<T> modifyNetherParameterPoints(Climate.ParameterList<T> originalList, Function<ResourceKey<Biome>, T> lookup) {
+		List<Pair<Climate.ParameterPoint, T>> parameters = new ArrayList<>(originalList.values());
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(0.0f),
+				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(1.0f),
+				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		return new Climate.ParameterList<>(parameters);
 	}
 
 	private static SurfaceRules.RuleSource preliminarySurfaceRule(ResourceKey<Biome> biomeKey, BlockState groundBlock, BlockState undergroundBlock, BlockState underwaterBlock) {
@@ -132,11 +134,6 @@ public class AstolfoforgeModBiomes {
 										SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),
 												SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0), SurfaceRules.state(groundBlock)), SurfaceRules.state(underwaterBlock))),
 										SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR), SurfaceRules.state(undergroundBlock))))));
-	}
-
-	private static void addParameterPoint(List<Pair<Climate.ParameterPoint, Holder<Biome>>> parameters, Pair<Climate.ParameterPoint, Holder<Biome>> point) {
-		if (!parameters.contains(point))
-			parameters.add(point);
 	}
 
 	public interface AstolfoforgeModNoiseGeneratorSettings {

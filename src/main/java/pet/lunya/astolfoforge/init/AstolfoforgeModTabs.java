@@ -34,14 +34,15 @@ public class AstolfoforgeModTabs {
 				tabData.accept(AstolfoforgeModItems.RIMURU_SPAWN_EGG.get());
 				tabData.accept(AstolfoforgeModItems.NAGISA_SHIOTA_SPAWN_EGG.get());
 				tabData.accept(AstolfoforgeModItems.SIEG_SPAWN_EGG.get());
+				tabData.accept(AstolfoforgeModItems.BRIDGET_SPAWN_EGG.get());
 				tabData.accept(AstolfoforgeModBlocks.ASTOLFO_FLOWER.get().asItem());
+				tabData.accept(AstolfoforgeModItems.MAHIRO_SPAWN_EGG.get());
 			}).build());
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(AstolfoforgeModItems.BOYKISSER_SPAWN_EGG.get());
-			tabData.accept(AstolfoforgeModItems.BRIDGET_SPAWN_EGG.get());
 		}
 	}
 }

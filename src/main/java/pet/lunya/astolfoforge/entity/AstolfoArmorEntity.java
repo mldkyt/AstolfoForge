@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.AbstractThrownPotion;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.AbstractThrownPotion;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.*;
@@ -27,7 +27,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 public class AstolfoArmorEntity extends PathfinderMob {
@@ -47,7 +47,7 @@ public class AstolfoArmorEntity extends PathfinderMob {
 			}
 		});
 		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, AstolfoRepellentEntity.class, (float) 6, 1, 1.2));
-		this.goalSelector.addGoal(3, new TemptGoal(this, 2, Ingredient.of(AstolfoforgeModItems.ASTOLFO_ATTRACOTR.get()), false));
+		this.goalSelector.addGoal(3, new TemptGoal(this, 2, (Ingredient.of(AstolfoforgeModItems.ASTOLFO_ATTRACOTR.get())), false));
 		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
 		this.targetSelector.addGoal(5, new HurtByTargetGoal(this).setAlertOthers());
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -61,17 +61,17 @@ public class AstolfoArmorEntity extends PathfinderMob {
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("astolfoforge:astolfo_yahoo"));
+		return BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("astolfoforge:astolfo_yahoo"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("entity.generic.death"));
 	}
 
 	@Override

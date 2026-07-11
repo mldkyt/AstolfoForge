@@ -1,11 +1,9 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "tab",
   "definition": {
     "name": "Astolfo Mod",
-    "icon": {
-      "value": "CUSTOM:AstolfoItem"
-    },
+    "icon": "CUSTOM:AstolfoItem",
     "showSearch": false
   }
 }

@@ -16,8 +16,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
 import net.minecraft.core.registries.Registries;
 
 @EventBusSubscriber
@@ -53,11 +53,13 @@ public class AstolfoforgeModEntities {
 			EntityType.Builder.<SiegEntity>of(SiegEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<BridgetEntity>> BRIDGET = register("bridget",
 			EntityType.Builder.<BridgetEntity>of(BridgetEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
+	public static final DeferredHolder<EntityType<?>, EntityType<MahiroEntity>> MAHIRO = register("mahiro",
+			EntityType.Builder.<MahiroEntity>of(MahiroEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
 	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(AstolfoforgeMod.MODID, registryname))));
+		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(AstolfoforgeMod.MODID, registryname))));
 	}
 
 	@SubscribeEvent
@@ -74,6 +76,7 @@ public class AstolfoforgeModEntities {
 		NagisaShiotaEntity.init(event);
 		SiegEntity.init(event);
 		BridgetEntity.init(event);
+		MahiroEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -90,5 +93,6 @@ public class AstolfoforgeModEntities {
 		event.put(NAGISA_SHIOTA.get(), NagisaShiotaEntity.createAttributes().build());
 		event.put(SIEG.get(), SiegEntity.createAttributes().build());
 		event.put(BRIDGET.get(), BridgetEntity.createAttributes().build());
+		event.put(MAHIRO.get(), MahiroEntity.createAttributes().build());
 	}
 }
