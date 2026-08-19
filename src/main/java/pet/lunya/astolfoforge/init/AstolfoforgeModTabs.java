@@ -37,6 +37,9 @@ public class AstolfoforgeModTabs {
 				tabData.accept(AstolfoforgeModItems.BRIDGET_SPAWN_EGG.get());
 				tabData.accept(AstolfoforgeModBlocks.ASTOLFO_FLOWER.get().asItem());
 				tabData.accept(AstolfoforgeModItems.MAHIRO_SPAWN_EGG.get());
+				tabData.accept(AstolfoforgeModItems.ONIMAI_SPAWN_EGG.get());
+				tabData.accept(AstolfoforgeModItems.YUURI_SPAWN_EGG.get());
+				tabData.accept(AstolfoforgeModItems.YURI_SPAWN_EGG.get());
 			}).build());
 
 	@SubscribeEvent

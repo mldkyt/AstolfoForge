@@ -38,6 +38,9 @@ public class AstolfoforgeModItems {
 	public static final DeferredItem<Item> BRIDGET_SPAWN_EGG;
 	public static final DeferredItem<Item> ASTOLFO_FLOWER;
 	public static final DeferredItem<Item> MAHIRO_SPAWN_EGG;
+	public static final DeferredItem<Item> ONIMAI_SPAWN_EGG;
+	public static final DeferredItem<Item> YUURI_SPAWN_EGG;
+	public static final DeferredItem<Item> YURI_SPAWN_EGG;
 	static {
 		ASTOLFO_CASUAL_SPAWN_EGG = register("astolfo_casual_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(AstolfoforgeModEntities.ASTOLFO_CASUAL.get())));
 		ASTOLFO_SCHOOLGIRL_SPAWN_EGG = register("astolfo_schoolgirl_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(AstolfoforgeModEntities.ASTOLFO_SCHOOLGIRL.get())));
@@ -56,6 +59,9 @@ public class AstolfoforgeModItems {
 		BRIDGET_SPAWN_EGG = register("bridget_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(AstolfoforgeModEntities.BRIDGET.get())));
 		ASTOLFO_FLOWER = block(AstolfoforgeModBlocks.ASTOLFO_FLOWER);
 		MAHIRO_SPAWN_EGG = register("mahiro_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(AstolfoforgeModEntities.MAHIRO.get())));
+		ONIMAI_SPAWN_EGG = register("onimai_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(AstolfoforgeModEntities.ONIMAI.get())));
+		YUURI_SPAWN_EGG = register("yuuri_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(AstolfoforgeModEntities.YUURI.get())));
+		YURI_SPAWN_EGG = register("yuri_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(AstolfoforgeModEntities.YURI.get())));
 	}
 
 	// Start of user code block custom items

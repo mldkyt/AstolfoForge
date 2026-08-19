@@ -1,8 +1,6 @@
 {
   "type": "neoforge:add_spawns",
-  "biomes": {
-    "type": "neoforge:any"
-  },
+  "biomes": "astolfoforge:astolfo_biome",
   "spawners": {
     "type": "astolfoforge:felix",
     "weight": 10,

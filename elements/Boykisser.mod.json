@@ -6,8 +6,20 @@
     "mobLabel": "",
     "mobModelName": "Biped",
     "mobModelTexture": "2023_08_22_boykisser-21916617.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
     },
     "modelLayers": [],
     "animations": [],
@@ -24,6 +36,7 @@
       "value": -3355444,
       "falpha": 0.0
     },
+    "spawnEggTexture": "",
     "creativeTabs": [
       "MISC"
     ],
@@ -49,6 +62,9 @@
     "health": 10,
     "xpAmount": 0,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },
@@ -77,6 +93,7 @@
     "hurtSound": "entity.generic.hurt",
     "deathSound": "entity.generic.death",
     "stepSound": "",
+    "raidCelebrationSound": "",
     "entityDataEntries": [],
     "hasAI": true,
     "aiBase": "(none)",
@@ -93,9 +110,11 @@
     "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
-    "minNumberOfMobsPerGroup": 4,
+    "minNumberOfMobsPerGroup": 2,
     "maxNumberOfMobsPerGroup": 4,
-    "restrictionBiomes": [],
+    "restrictionBiomes": [
+      "CUSTOM:AstolfoBiome"
+    ],
     "spawnInDungeons": false,
     "raidSpawnsCount": [
       4,
@@ -107,6 +126,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

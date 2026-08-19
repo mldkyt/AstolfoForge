@@ -88,10 +88,10 @@ public class AstolfoforgeModBiomes {
 
 	public static <T> Climate.ParameterList<T> modifyOverworldParameterPoints(Climate.ParameterList<T> originalList, Function<ResourceKey<Biome>, T> lookup) {
 		List<Pair<Climate.ParameterPoint, T>> parameters = new ArrayList<>(originalList.values());
-		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(0.0f),
-				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
-		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(1.0f),
-				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.4f, 0.4f), Climate.Parameter.point(0.0f),
+				Climate.Parameter.span(-0.4f, 0.4f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.4f, 0.4f), Climate.Parameter.point(1.0f),
+				Climate.Parameter.span(-0.4f, 0.4f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
 		return new Climate.ParameterList<>(parameters);
 	}
 
@@ -110,10 +110,10 @@ public class AstolfoforgeModBiomes {
 
 	public static <T> Climate.ParameterList<T> modifyNetherParameterPoints(Climate.ParameterList<T> originalList, Function<ResourceKey<Biome>, T> lookup) {
 		List<Pair<Climate.ParameterPoint, T>> parameters = new ArrayList<>(originalList.values());
-		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(0.0f),
-				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
-		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(-0.9f, 0.9f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.5f, 0.9f), Climate.Parameter.point(1.0f),
-				Climate.Parameter.span(-0.9f, 0.9f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.4f, 0.4f), Climate.Parameter.point(0.0f),
+				Climate.Parameter.span(-0.4f, 0.4f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
+		parameters.add(new Pair<>(new Climate.ParameterPoint(Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(-0.6f, 0.6f), Climate.Parameter.span(0.1f, 1f), Climate.Parameter.span(-0.4f, 0.4f), Climate.Parameter.point(1.0f),
+				Climate.Parameter.span(-0.4f, 0.4f), 0), lookup.apply(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("astolfoforge", "astolfo_biome")))));
 		return new Climate.ParameterList<>(parameters);
 	}
 

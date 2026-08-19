@@ -1,12 +1,10 @@
 {
   "type": "neoforge:add_spawns",
-  "biomes": {
-    "type": "neoforge:any"
-  },
+  "biomes": "astolfoforge:astolfo_biome",
   "spawners": {
     "type": "astolfoforge:boykisser",
     "weight": 20,
-    "minCount": 4,
+    "minCount": 2,
     "maxCount": 4
   }
 }

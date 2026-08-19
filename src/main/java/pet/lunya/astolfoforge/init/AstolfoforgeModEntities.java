@@ -55,6 +55,12 @@ public class AstolfoforgeModEntities {
 			EntityType.Builder.<BridgetEntity>of(BridgetEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<MahiroEntity>> MAHIRO = register("mahiro",
 			EntityType.Builder.<MahiroEntity>of(MahiroEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
+	public static final DeferredHolder<EntityType<?>, EntityType<OnimaiEntity>> ONIMAI = register("onimai",
+			EntityType.Builder.<OnimaiEntity>of(OnimaiEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
+	public static final DeferredHolder<EntityType<?>, EntityType<YuuriEntity>> YUURI = register("yuuri",
+			EntityType.Builder.<YuuriEntity>of(YuuriEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
+	public static final DeferredHolder<EntityType<?>, EntityType<YuriEntity>> YURI = register("yuri",
+			EntityType.Builder.<YuriEntity>of(YuriEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -77,6 +83,9 @@ public class AstolfoforgeModEntities {
 		SiegEntity.init(event);
 		BridgetEntity.init(event);
 		MahiroEntity.init(event);
+		OnimaiEntity.init(event);
+		YuuriEntity.init(event);
+		YuriEntity.init(event);
 	}
 
 	@SubscribeEvent
@@ -94,5 +103,8 @@ public class AstolfoforgeModEntities {
 		event.put(SIEG.get(), SiegEntity.createAttributes().build());
 		event.put(BRIDGET.get(), BridgetEntity.createAttributes().build());
 		event.put(MAHIRO.get(), MahiroEntity.createAttributes().build());
+		event.put(ONIMAI.get(), OnimaiEntity.createAttributes().build());
+		event.put(YUURI.get(), YuuriEntity.createAttributes().build());
+		event.put(YURI.get(), YuriEntity.createAttributes().build());
 	}
 }

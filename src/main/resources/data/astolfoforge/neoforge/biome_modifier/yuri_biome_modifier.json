@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "astolfoforge:astolfo_biome",
+  "spawners": {
+    "type": "astolfoforge:yuri",
+    "weight": 20,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}

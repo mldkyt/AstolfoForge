@@ -33,5 +33,11 @@
   "item.astolfoforge.nagisa_shiota_spawn_egg": "Nagisa Shiota Spawn Egg",
   "biome.astolfoforge.astolfo_biome": "Astolfo Biome",
   "item.astolfoforge.mahiro_spawn_egg": "Mahiro Spawn Egg",
-  "entity.astolfoforge.mahiro": "Mahiro"
+  "entity.astolfoforge.mahiro": "Mahiro",
+  "item.astolfoforge.onimai_spawn_egg": "Onimai Spawn Egg",
+  "entity.astolfoforge.onimai": "Onimai",
+  "item.astolfoforge.yuuri_spawn_egg": "Yuuri Spawn Egg",
+  "entity.astolfoforge.yuuri": "Yuuri",
+  "item.astolfoforge.yuri_spawn_egg": "Yuri Spawn Egg",
+  "entity.astolfoforge.yuri": "Yuri"
 }

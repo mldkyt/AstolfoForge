@@ -27,5 +27,8 @@ public class AstolfoforgeModEntityRenderers {
 		event.registerEntityRenderer(AstolfoforgeModEntities.SIEG.get(), SiegRenderer::new);
 		event.registerEntityRenderer(AstolfoforgeModEntities.BRIDGET.get(), BridgetRenderer::new);
 		event.registerEntityRenderer(AstolfoforgeModEntities.MAHIRO.get(), MahiroRenderer::new);
+		event.registerEntityRenderer(AstolfoforgeModEntities.ONIMAI.get(), OnimaiRenderer::new);
+		event.registerEntityRenderer(AstolfoforgeModEntities.YUURI.get(), YuuriRenderer::new);
+		event.registerEntityRenderer(AstolfoforgeModEntities.YURI.get(), YuriRenderer::new);
 	}
 }

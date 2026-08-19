@@ -22,26 +22,7 @@
   },
   "spawners": {
     "monster": [],
-    "creature": [
-      {
-        "type": "astolfoforge:astolfo_armor",
-        "weight": 20,
-        "minCount": 99,
-        "maxCount": 99
-      },
-      {
-        "type": "astolfoforge:astolfo_casual",
-        "weight": 20,
-        "minCount": 99,
-        "maxCount": 99
-      },
-      {
-        "type": "astolfoforge:astolfo_schoolgirl",
-        "weight": 20,
-        "minCount": 99,
-        "maxCount": 99
-      }
-    ],
+    "creature": [],
     "ambient": [],
     "axolotls": [],
     "underground_water_creature": [],

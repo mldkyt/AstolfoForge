@@ -110,9 +110,11 @@
     "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "creature",
-    "minNumberOfMobsPerGroup": 8,
-    "maxNumberOfMobsPerGroup": 16,
-    "restrictionBiomes": [],
+    "minNumberOfMobsPerGroup": 2,
+    "maxNumberOfMobsPerGroup": 4,
+    "restrictionBiomes": [
+      "CUSTOM:AstolfoBiome"
+    ],
     "spawnInDungeons": false,
     "raidSpawnsCount": [
       4,
