@@ -19,7 +19,7 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 
 public class DuplicateCutiesProcProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, CommandContext<CommandSourceStack> arguments) {
-		for (int index0 = 0; index0 < (int) DoubleArgumentType.getDouble(arguments, "amount"); index0++) {
+		for (int _i1 = 0; _i1 < (int) DoubleArgumentType.getDouble(arguments, "amount"); _i1++) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate((DoubleArgumentType.getDouble(arguments, "radius")) / 2d), e -> true).stream()

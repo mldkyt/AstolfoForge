@@ -23,7 +23,7 @@ description="Astolfo Forge adds a bunch of femboys into Minecraft."
 [[dependencies.astolfoforge]]
     modId="neoforge"
     type="required"
-    versionRange="[26.1.2.71,)"
+    versionRange="[26.1.2.95,)"
     ordering="AFTER"
     side="BOTH"
 
