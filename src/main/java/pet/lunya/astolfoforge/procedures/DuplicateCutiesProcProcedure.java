@@ -26,7 +26,7 @@ public class DuplicateCutiesProcProcedure {
 						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 					if (entityiterator instanceof AstolfoArmorEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_ARMOR.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_ARMOR.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -34,7 +34,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof AstolfoCasualEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_CASUAL.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_CASUAL.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -42,7 +42,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof AstolfoSchoolgirlEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_SCHOOLGIRL.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.ASTOLFO_SCHOOLGIRL.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -50,7 +50,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof BoykisserEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.BOYKISSER.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.BOYKISSER.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -58,7 +58,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof FelixEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.FELIX.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.FELIX.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -66,7 +66,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof HideriKanzakiEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.HIDERI_KANZAKI.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.HIDERI_KANZAKI.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -74,7 +74,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof NagisaShiotaEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.NAGISA_SHIOTA.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.NAGISA_SHIOTA.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -82,7 +82,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof RimuruEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.RIMURU.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.RIMURU.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -90,7 +90,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof VentiEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.VENTI.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.VENTI.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -98,7 +98,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof SiegEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.SIEG.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.SIEG.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
@@ -106,7 +106,7 @@ public class DuplicateCutiesProcProcedure {
 					}
 					if (entityiterator instanceof BridgetEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AstolfoforgeModEntities.BRIDGET.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+							Entity entityToSpawn = AstolfoforgeModEntities.BRIDGET.get().spawn(_level, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 							}
